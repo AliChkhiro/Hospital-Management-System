@@ -1,6 +1,6 @@
 import React from 'react';
-import Sidebar from '../Components/Sidebar/Sidebar';
-import Header from '../Components/Header/Header';
+/*import Sidebar from '../Components/Sidebar/Sidebar';
+import Header from '../Components/Header/Header';*/
 import { Routes, Route } from 'react-router-dom';
 import Random from '../Components/Random';
 import AdminDashboard from '../Layout/AdminDashboard';
