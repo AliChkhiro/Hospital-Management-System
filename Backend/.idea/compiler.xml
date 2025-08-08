@@ -8,13 +8,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="UserMS" />
+<<<<<<< HEAD
+=======
         <module name="GatewayMS" />
+>>>>>>> 3276da6f (des modifications en classe TokenFilter & JwtUtil)
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+<<<<<<< HEAD
+=======
       <module name="GatewayMS" options="-parameters" />
+>>>>>>> 3276da6f (des modifications en classe TokenFilter & JwtUtil)
       <module name="UserMS" options="-parameters" />
     </option>
   </component>
