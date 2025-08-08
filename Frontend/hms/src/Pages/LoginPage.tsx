@@ -1,11 +1,15 @@
-import {PasswordInput, TextInput } from '@mantine/core'
+import {PasswordInput, TextInput, Button } from '@mantine/core'
 import { IconHeartbeat } from '@tabler/icons-react'
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from '@mantine/form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { loginUser } from '../service/UserService';
+import { errorNotification, successNotification } from '../Utility/NotificationUtil';
 
 const LoginPage = () => {
-
+const navigate = useNavigate();
+const [loading, setLoading] = useState(false);
+  
   const form = useForm({
     initialValues: {
       email: '',
@@ -19,7 +23,15 @@ const LoginPage = () => {
   });
 
   const handleSubmit = (values:typeof form.values) => {
-    console.log( values);
+    setLoading(true);
+    loginUser(values).then((_data) => {
+        successNotification('Logged in Successfully.');
+        navigate('/dashboard');
+    }).catch((error) => {
+        errorNotification(error?.response?.data?.errorMessage);
+    }).finally(() => setLoading(false));
+   
+
   };
 
 
@@ -42,6 +54,7 @@ const LoginPage = () => {
     />
     <PasswordInput {...form.getInputProps('password')} className='transition duration-300' variant="unstyled" size="md" radius="md" placeholder="Password"
     />
+    <Button loading={loading} radius="md" size="md" type="submit" color="primary">Login</Button>
     <div className='text-neutral-100 text-sm self-center'>Don't have an 
       account? <Link to="/register" className="hover:underline">Register</Link></div>
         </form>

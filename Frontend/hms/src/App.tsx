@@ -1,8 +1,10 @@
 import './App.css';
 import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
 import { createTheme, MantineProvider } from '@mantine/core';
 import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './Routes/AppRoutes';
+import { Notifications } from '@mantine/notifications';
 
 const theme = createTheme({
   focusRing: 'never',
@@ -48,6 +50,7 @@ const theme = createTheme({
 function App() {
   return (
     <MantineProvider theme={theme}>
+      <Notifications position='top-center'/>
       <BrowserRouter>
         <AppRoutes />
       </BrowserRouter>
