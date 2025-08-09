@@ -5,8 +5,13 @@ import { useForm } from '@mantine/form';
 import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../service/UserService';
 import { errorNotification, successNotification } from '../Utility/NotificationUtil';
+import { useDispatch } from 'react-redux';
+import { setJwt } from '../Slices/JwtSlice';
+import { jwtDecode } from 'jwt-decode';
+import { setUser } from '../Slices/UserSlice';
 
 const LoginPage = () => {
+const dispatch = useDispatch();
 const navigate = useNavigate();
 const [loading, setLoading] = useState(false);
   
@@ -26,7 +31,9 @@ const [loading, setLoading] = useState(false);
     setLoading(true);
     loginUser(values).then((_data) => {
         successNotification('Logged in Successfully.');
-        navigate('/dashboard');
+        dispatch(setJwt(_data))
+        dispatch(setUser(jwtDecode(_data)));
+        //navigate('/dashboard');
     }).catch((error) => {
         errorNotification(error?.response?.data?.errorMessage);
     }).finally(() => setLoading(false));

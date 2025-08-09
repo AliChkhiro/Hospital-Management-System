@@ -5,6 +5,8 @@ import { createTheme, MantineProvider } from '@mantine/core';
 import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './Routes/AppRoutes';
 import { Notifications } from '@mantine/notifications';
+import { Provider } from 'react-redux';
+import Store from './Store';
 
 const theme = createTheme({
   focusRing: 'never',
@@ -47,14 +49,16 @@ const theme = createTheme({
   },
 });
 
-function App() {
+function App(){
   return (
-    <MantineProvider theme={theme}>
-      <Notifications position='top-center'/>
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
-    </MantineProvider>
+    <Provider store={Store}>
+      <MantineProvider theme={theme}>
+        <Notifications position="top-center" />
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </MantineProvider>
+    </Provider>
   );
 }
 
