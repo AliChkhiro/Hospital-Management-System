@@ -33,6 +33,7 @@ public class UserAPI {
     @Autowired
     private JwtUtil jwtUtil;
 
+
     @PostMapping("/register")
     public ResponseEntity<ResponseDTO> registerUser(@RequestBody @Valid UserDTO userDTO) throws HmsException{
         userService.registerUser(userDTO);
@@ -40,7 +41,7 @@ public class UserAPI {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> postMethodName(@RequestBody LoginDTO loginDTO) throws HmsException{
+    public ResponseEntity<String> loginUser(@RequestBody LoginDTO loginDTO) throws HmsException{
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(loginDTO.getEmail(),loginDTO.getPassword())

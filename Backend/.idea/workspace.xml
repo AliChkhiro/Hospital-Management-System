@@ -5,20 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d59c059-8098-458f-8f9d-10df4e88dfcf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ProfileMS/src/main/java/com/hms/profile/api/DoctorAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProfileMS/src/main/java/com/hms/profile/api/PatientAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProfileMS/src/main/java/com/hms/profile/dto/DoctorDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProfileMS/src/main/java/com/hms/profile/dto/PatientDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProfileMS/src/main/java/com/hms/profile/entity/Doctor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProfileMS/src/main/java/com/hms/profile/repository/PatientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Project_Hospital Management System.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserMS/src/main/java/com/hms/user/config/WebClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserMS/src/main/java/com/hms/user/service/ApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProfileMS/src/main/java/com/hms/profile/dto/PatientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProfileMS/src/main/java/com/hms/profile/dto/PatientDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProfileMS/src/main/java/com/hms/profile/entity/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProfileMS/src/main/java/com/hms/profile/entity/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMS/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserMS/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMS/src/main/java/com/hms/user/api/UserAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMS/src/main/java/com/hms/user/api/UserAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMS/src/main/java/com/hms/user/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMS/src/main/java/com/hms/user/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMS/src/main/java/com/hms/user/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMS/src/main/java/com/hms/user/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMS/src/main/java/com/hms/user/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserMS/src/main/java/com/hms/user/service/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +53,7 @@
     "Application.ProfileMsApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
