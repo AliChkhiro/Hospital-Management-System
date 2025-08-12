@@ -1,6 +1,6 @@
 import {PasswordInput, TextInput, Button } from '@mantine/core'
 import { IconHeartbeat } from '@tabler/icons-react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useForm } from '@mantine/form';
 import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../service/UserService';

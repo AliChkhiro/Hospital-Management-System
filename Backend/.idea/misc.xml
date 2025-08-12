@@ -4,12 +4,9 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/Backend/UserMS/pom.xml" />
-=======
         <option value="$PROJECT_DIR$/UserMS/pom.xml" />
         <option value="$PROJECT_DIR$/GatewayMS/pom.xml" />
->>>>>>> 3276da6f (des modifications en classe TokenFilter & JwtUtil)
+        <option value="$PROJECT_DIR$/ProfileMS/pom.xml" />
       </list>
     </option>
   </component>
