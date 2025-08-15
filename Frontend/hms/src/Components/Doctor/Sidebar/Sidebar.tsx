@@ -4,7 +4,7 @@ import {
   IconHeartbeat,
   IconLayoutGrid,
   IconMoodHeart,
-  IconStethoscope,
+  IconUser,
   IconVaccine,
 } from '@tabler/icons-react';
 import React from 'react';
@@ -12,16 +12,11 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 const links = [
-  {
-    name: 'Dashboard',
-    url: '/dashboard',
-    icon: <IconLayoutGrid stroke={1.5} />,
-  },
-  //{ name: 'Profile', url: '/profile', icon: <IconStethoscope stroke={1.5} /> },
-  { name: 'Doctors', url: '/doctors', icon: <IconStethoscope stroke={1.5} /> },
-  { name: 'Patients', url: '/patients', icon: <IconMoodHeart stroke={1.5} /> },
-  { name: 'Appointments', url: '/appointments', icon: <IconCalendarCheck stroke={1.5} />},
-  { name: 'Pharmacy', url: '/pharmacy', icon: <IconVaccine stroke={1.5} /> },
+  { name: 'Dashboard', url: '/doctor/dashboard', icon: <IconLayoutGrid stroke={1.5} />},
+  { name: 'Profile', url: '/doctor/profile', icon: <IconUser stroke={1.5} /> },
+  { name: 'Patients', url: '/doctor/patients', icon: <IconMoodHeart stroke={1.5} /> },
+  { name: 'Appointments', url: '/doctor/appointments', icon: <IconCalendarCheck stroke={1.5} />},
+  { name: 'Pharmacy', url: '/doctor/pharmacy', icon: <IconVaccine stroke={1.5} /> },
 ];
 
 const Sidebar = () => {
@@ -41,7 +36,7 @@ const Sidebar = () => {
 
       <div className="flex flex-col gap-1 items-center ">
         <div className="p-1 bg-white rounded-full shadow-lg">
-          <Avatar variant="filled" src="avatar.png" size="xl" alt="it's me" />
+          <Avatar variant="filled" src="/avatar.png" size="xl" alt="it's me" />
         </div>
         <span className="font-medium text-light">{user.name}</span>
         <Text c="dimmed" className='text-light' size="xs">

@@ -1,23 +1,25 @@
-import { Avatar, Button, Divider, Modal, NumberInput, Select, Table, TagsInput, TextInput } from '@mantine/core';
+import { Avatar, Button, Divider, Modal, NumberInput, Select, Table, TextInput } from '@mantine/core';
 import { DateInput } from '@mantine/dates';
 import { IconEdit } from '@tabler/icons-react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { bloodGroups } from '../../../Data/DropdownData';
+import { doctorDepartments, doctorSpecializations } from '../../../Data/DropdownData';
 import { useDisclosure } from '@mantine/hooks';
 
-const patient: any = {
-  name: 'John Doe',
-  email: 'john.doe@example.com',
-  dob: '1990-01-01',
-  phone: '123-456-7890',
+
+const doctor: any = {
+  name: 'Dr. John Doe',
+  email: 'dr.john.doe@example.com',
+  dob: '1985-05-15', // format ISO YYYY-MM-DD
+  phone: '+212 623-456-789',
   address: '123 Main St, City, Country',
-  cniNo: '1234-5678-9012',
-  bloodGroup: 'O+',
-  allergies: 'Peanuts',
-  chronicDiseases: 'Diabetes',
-  profilePicture: '/avatar.png',
+  licenseNo: 'LIC-987654321',
+  specialization: 'Cardiology',
+  department: 'Cardiology Department',
+  totalExp: 12, // en années
+  profilePicture: 'avatar.png',
 };
+
 
 const Profile = () => {
   const user = useSelector((state: any) => state.user);
@@ -57,46 +59,46 @@ const Profile = () => {
             <Table.Tr>
               <Table.Td className="font-semibold text-xl">Date of Birth</Table.Td>
               {editMode? <Table.Td className="text-xl"> <DateInput placeholder="Date of birth" />
-              </Table.Td> : <Table.Td className="text-xl">{patient.dob}</Table.Td>}
+              </Table.Td> : <Table.Td className="text-xl">{doctor.dob}</Table.Td>}
             </Table.Tr>
             <Table.Tr>
               <Table.Td className="font-semibold text-xl">Phone</Table.Td>
               {editMode? <Table.Td className="text-xl"> <NumberInput maxLength={10} clampBehavior="strict" placeholder="Phone number" hideControls/>
-              </Table.Td>:<Table.Td className="text-xl">{patient.phone}</Table.Td>}
+              </Table.Td>:<Table.Td className="text-xl">{doctor.phone}</Table.Td>}
             </Table.Tr>
             <Table.Tr>
               <Table.Td className="font-semibold text-xl">Address</Table.Td>
               {editMode? <Table.Td className="text-xl"> <TextInput  placeholder="Address" />
-              </Table.Td>:<Table.Td className="text-xl">{patient.address}</Table.Td>}
+              </Table.Td>:<Table.Td className="text-xl">{doctor.address}</Table.Td>}
             </Table.Tr>
             <Table.Tr>
-              <Table.Td className="font-semibold text-xl">Cni No</Table.Td>
-              {editMode? <Table.Td className="text-xl"> <NumberInput maxLength={12} clampBehavior="strict" placeholder="CNI number" hideControls/>
-              </Table.Td>:<Table.Td className="text-xl">{patient.cniNo}</Table.Td>}
+              <Table.Td className="font-semibold text-xl">License No</Table.Td>
+              {editMode? <Table.Td className="text-xl"> <NumberInput maxLength={12} clampBehavior="strict" placeholder="License number" hideControls/>
+              </Table.Td>:<Table.Td className="text-xl">{doctor.licenseNo}</Table.Td>}
             </Table.Tr>
             <Table.Tr>
-              <Table.Td className="font-semibold text-xl">Blood Group</Table.Td>
-              {editMode? <Table.Td className="text-xl"> <Select placeholder="Blood group" data={bloodGroups}/>
-              </Table.Td>:<Table.Td className="text-xl">{patient.bloodGroup}</Table.Td>}
+              <Table.Td className="font-semibold text-xl">Specialization</Table.Td>
+              {editMode? <Table.Td className="text-xl"> <Select placeholder="Specialization" data={doctorSpecializations}/>
+              </Table.Td>:<Table.Td className="text-xl">{doctor.specialization}</Table.Td>}
             </Table.Tr>
             <Table.Tr>
-              <Table.Td className="font-semibold text-xl">Allergies</Table.Td>
-              {editMode? <Table.Td className="text-xl"> <TagsInput placeholder="Allergies separated by comma" />
-              </Table.Td>:<Table.Td className="text-xl">{patient.allergies}</Table.Td>}
+              <Table.Td className="font-semibold text-xl">Department</Table.Td>
+              {editMode? <Table.Td className="text-xl"> <Select placeholder="Department" data={doctorDepartments}/>
+              </Table.Td>:<Table.Td className="text-xl">{doctor.department}</Table.Td>}
             </Table.Tr>
             <Table.Tr>
               <Table.Td className="font-semibold text-xl">
-                Chronic Diseases
+                Total Experience
               </Table.Td>
-              {editMode? <Table.Td className="text-xl"> <TagsInput placeholder="Chronic Disease separated by comma" />
-              </Table.Td>:<Table.Td className="text-xl">{patient.chronicDiseases}</Table.Td>}
+              {editMode? <Table.Td className="text-xl"> <NumberInput maxLength={2} max={50} clampBehavior="strict" placeholder="Total Experience" hideControls/>
+              </Table.Td>:<Table.Td className="text-xl">{doctor.totalExp} years</Table.Td>}
             </Table.Tr>
           </Table.Tbody>
         </Table>
       </div>
 
        <Modal centered opened={opened} onClose={close} title={<span className="text-xl font-medium">Upload Profile Picture</span>}>
-
+       
       </Modal>         
 
 
