@@ -18,7 +18,7 @@ public class PatientServiceImpl implements PatientService{
     public Long addPatient(PatientDTO patientDTO) throws HmsException {
         if (patientDTO.getEmail()!=null && patientRepository.findByEmail(patientDTO.getEmail()).isPresent())
             throw new HmsException("PATIENT_ALREADY_EXISTS");
-        if (patientDTO.getAadharNo()!=null && patientRepository.findByAadharNo(patientDTO.getAadharNo()).isPresent())
+        if (patientDTO.getCniNo()!=null && patientRepository.findByCniNo(patientDTO.getCniNo()).isPresent())
             throw new HmsException("PATIENT_ALREADY_EXISTS");
     return patientRepository.save(patientDTO.toEntity()).getId();
     }

@@ -8,5 +8,5 @@ import com.hms.profile.entity.Patient;
 
 public interface PatientRepository extends CrudRepository<Patient, Long> {
     Optional<Patient> findByEmail(String email);
-    Optional<Patient> findByAadharNo(String aadharNo);
+    Optional<Patient> findByCniNo(String aadharNo);
 }

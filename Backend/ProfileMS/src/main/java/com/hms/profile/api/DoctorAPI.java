@@ -1,10 +1,8 @@
 package com.hms.profile.api;
 
 import com.hms.profile.dto.DoctorDTO;
-import com.hms.profile.dto.PatientDTO;
 import com.hms.profile.exception.HmsException;
 import com.hms.profile.service.DoctorService;
-import com.hms.profile.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

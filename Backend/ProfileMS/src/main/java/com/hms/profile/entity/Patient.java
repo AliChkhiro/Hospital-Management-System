@@ -25,13 +25,13 @@ public class Patient {
     private String phone;
     private String address;
     @Column(unique = true)
-    private String aadharNo;
+    private String cniNo;
     private BloodGroup bloodGroup;
     private String allergies;
     private String chronicDisease;
 
     public PatientDTO toDTO() {
-        return new PatientDTO(this.id, this.name, this.email, this.dob, this.phone, this.address, this.aadharNo, 
+        return new PatientDTO(this.id, this.name, this.email, this.dob, this.phone, this.address, this.cniNo, 
         this.bloodGroup, this.allergies, this.chronicDisease);
     }
 
