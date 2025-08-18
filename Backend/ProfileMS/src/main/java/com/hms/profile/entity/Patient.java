@@ -19,12 +19,12 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @Column(unique = true)
+    @Column(unique = true, nullable = true)
     private String email;
     private LocalDate dob;
     private String phone;
     private String address;
-    @Column(unique = true)
+    @Column(unique = true, nullable = true)
     private String cniNo;
     private BloodGroup bloodGroup;
     private String allergies;

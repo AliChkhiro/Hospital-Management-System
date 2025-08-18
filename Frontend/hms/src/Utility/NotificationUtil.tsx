@@ -16,7 +16,7 @@ const successNotification = (message: string) => {
 const errorNotification = (message: string) => {
   notifications.show({
     title: "Error",
-  message: message,
+  message: message || "Some error occurred",
   color: 'red',
   icon: <IconX />,
   withCloseButton: true,
