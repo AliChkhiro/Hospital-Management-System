@@ -1,8 +1,0 @@
-{
-<<<<<<< HEAD
-  "java.compile.nullAnalysis.mode": "automatic"
-=======
-  "java.compile.nullAnalysis.mode": "automatic",
-  "java.configuration.updateBuildConfiguration": "interactive"
->>>>>>> 3276da6f (des modifications en classe TokenFilter & JwtUtil)
-}
