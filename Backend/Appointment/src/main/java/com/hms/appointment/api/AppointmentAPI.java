@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hms.appointment.dto.AppointmentDTO;
+import com.hms.appointment.dto.AppointmentDetails;
 import com.hms.appointment.exception.HmsException;
 
 import org.springframework.web.bind.annotation.PutMapping;
@@ -37,7 +38,7 @@ public class AppointmentAPI {
     }
 
     @PostMapping("/schedule")
-    public ResponseEntity<Long> scheduleAppointment(@RequestBody AppointmentDTO appointmentDTO){
+    public ResponseEntity<Long> scheduleAppointment(@RequestBody AppointmentDTO appointmentDTO) throws HmsException{
         return new ResponseEntity<>(appointmentService.scheduleAppointment(appointmentDTO), HttpStatus.CREATED);
     }
 
@@ -50,6 +51,10 @@ public class AppointmentAPI {
     @GetMapping("/get/{appointmentId}")
     public ResponseEntity<AppointmentDTO> getAppointmentDetails(@PathVariable Long appointmentId) throws HmsException {
         return new ResponseEntity<>(appointmentService.getAppointmentDetails(appointmentId), HttpStatus.OK);
+    }
+    @GetMapping("/get/details/{appointmentId}")
+    public ResponseEntity<AppointmentDetails> getAppointmentDetailsWithName(@PathVariable Long appointmentId) throws HmsException {
+        return new ResponseEntity<>(appointmentService.getAppointmentDetailsWithName(appointmentId), HttpStatus.OK);
     }
     
 }

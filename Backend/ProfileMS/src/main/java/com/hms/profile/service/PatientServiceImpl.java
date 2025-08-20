@@ -36,6 +36,11 @@ public class PatientServiceImpl implements PatientService{
     
     }
 
+    @Override
+    public Boolean patientExists(Long id) throws HmsException {
+        return patientRepository.existsById(id);
+    }
+
     
     
 }
